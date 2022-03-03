@@ -3,8 +3,12 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args){
+    long startTime=System.nanoTime();                         
     compulsory();
     homework(args);
+    long endTime=System.nanoTime();
+    long totalTime=endTime-startTime;
+    System.out.println("Time in nanosecs: " + totalTime);    //afisez timpul in nanosecunde
     }
 
     public static void compulsory(){
@@ -136,8 +140,8 @@ public class Main {
         }
 
         //For larger n display the running time of the application in nanoseconds.
-        long endTime = System.nanoTime();
-        System.out.println("Running time: " + endTime);
+        //long endTime = System.nanoTime();
+        //System.out.println("Running time: " + endTime);
 
     }
 
