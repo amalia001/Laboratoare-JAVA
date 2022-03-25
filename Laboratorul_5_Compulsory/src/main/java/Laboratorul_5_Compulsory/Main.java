@@ -1,4 +1,4 @@
-package Laboratorul_5_Homework;
+package Laboratorul_5_Compulsory;
 
 import java.io.IOException;
 

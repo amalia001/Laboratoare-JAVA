@@ -1,8 +1,7 @@
-package Laboratorul_5_Homework;
+package Laboratorul_5_Compulsory;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.io.Serializable;
 import java.util.HashMap;

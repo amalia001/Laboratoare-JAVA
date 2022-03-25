@@ -1,10 +1,11 @@
-package Laboratorul_5_Homework;
+package Laboratorul_5_Compulsory;
 
-public class Book extends Item{
+public class Article extends Item{
     private String type;
 
-    public Book(){}
-    public Book(String id, String title, String location){
+    public Article(){}
+
+    public Article(String id, String title, String location){
         super(id, title, location);
         type="Book";
     }
@@ -22,12 +23,11 @@ public class Book extends Item{
 
     @Override
     public String toString() {
-        return "Book { " +
-                "type='" + type + ',' + '\'' +
+        return "Article { " +
+                "type='" + type + '\'' +
                 ", id='" + id + '\'' +
                 ", title='" + title + '\'' +
                 ", location='" + location + '\'' +
                 '}' + '\'' ;
     }
 }
-

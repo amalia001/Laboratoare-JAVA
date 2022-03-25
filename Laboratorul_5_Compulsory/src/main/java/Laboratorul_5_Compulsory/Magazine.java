@@ -1,4 +1,4 @@
-package Laboratorul_5_Homework;
+package Laboratorul_5_Compulsory;
 
 public class Magazine extends Item{
     private String type;
