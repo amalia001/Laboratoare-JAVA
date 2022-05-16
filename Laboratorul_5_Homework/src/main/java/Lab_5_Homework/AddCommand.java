@@ -5,13 +5,19 @@ import java.util.List;
 
 public class AddCommand extends Command{
     private List<Item> items = new ArrayList<>();
+    private Catalog c;
 
-    public void AddCom(List<Item> items, Item i)
-    {
-        items.add(i);
+    public AddCommand(Catalog c) {
+        this.c = c;
+        this.items=items;
     }
 
-    public void showCommand(){
-        System.out.println("Comanda de adaugare in catalog");
+//    public void AddCom(List<Item> items, Item i)
+//    {
+//        items.add(i);
+//    }
+
+    public void execute() {
+        items.add(i);
     }
 }

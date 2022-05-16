@@ -21,12 +21,13 @@ public class Catalog implements Serializable {
         items.add(i);
     }
 
-    public void save(String filename)  {
+    public void save(String filename) throws FileInaccessibleException {
         var mapper = new ObjectMapper();
         try {
             mapper.writeValue(new File(filename), this);
         } catch (IOException e) {
             System.out.println("File inaccessible");
+            throw  new FileInaccessibleException(e);
         }
     }
 

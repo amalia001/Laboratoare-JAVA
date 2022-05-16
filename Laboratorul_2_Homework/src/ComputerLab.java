@@ -36,7 +36,7 @@ public class ComputerLab extends Room {
 
     @Override
     public String toString() {
-        return "ComputerLab{" +
+        return " Room: ComputerLab {" +
                 "sistemOperare='" + sistemOperare + '\'' +
                 ", name='" + name + '\'' +
                 ", capacity=" + capacity +

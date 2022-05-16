@@ -1,9 +1,8 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args){
-    long startTime=System.nanoTime();                         
+    long startTime=System.nanoTime();
     compulsory();
     homework(args);
     long endTime=System.nanoTime();

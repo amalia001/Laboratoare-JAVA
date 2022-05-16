@@ -24,7 +24,7 @@ public class Player implements Runnable {
         System.out.println(this.getName());
         System.out.println(extracted.toString());
 
-        //citire cuvant de la tastatura
+
         String word=null;
        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
        try {

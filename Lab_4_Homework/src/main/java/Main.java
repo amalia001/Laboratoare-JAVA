@@ -49,6 +49,7 @@ public class Main {
 
         Set<Intersection> intersections = new HashSet<>();
         List<Street> streets = new LinkedList<>();
+
         Faker faker = new Faker();
 
         var intersectiiFake = IntStream.rangeClosed(0, 9)

@@ -34,7 +34,7 @@ public class Main {
             nodes.add(v6);
 
             Network net1 = new Network(nodes);
-            Collections.sort(net1.getNodes());
+            //Collections.sort(net1.getNodes());
             System.out.println(net1);
     }
 }

@@ -35,11 +35,11 @@ public class LectureHall extends Room {
 
     @Override
     public String toString() {
-        return "LectureHall{" +
+        return " Room: LectureHall {" +
                 "videoProjector=" + videoProjector +
                 ", name='" + name + '\'' +
                 ", capacity=" + capacity +
-                '}';
+                '}' ;
     }
 
     @Override

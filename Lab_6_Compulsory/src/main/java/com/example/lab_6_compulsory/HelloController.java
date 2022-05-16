@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
@@ -65,18 +66,11 @@ public class HelloController implements Initializable {
         newValueFactory.setValue(0);
         width.setValueFactory(newValueFactory);
 
-//        this.rows = height.getValue();
-//        this.cols = width.getValue();
-//        this.padX = stoneSize + 10;
-//        this.padY = stoneSize + 10;
-//        this.cellWidth = (canvasWidth - 2 * padX) / (cols - 1);
-//        this.cellHeight = (canvasHeight - 2 * padY) / (rows - 1);
-//        this.boardWidth = (cols - 1) * cellWidth;
-//        this.boardHeight = (rows - 1) * cellHeight;
         createBtn.setOnAction(event -> {
             init();
             gc.clearRect(0, 0, canvasWidth, canvasHeight);
             drawGrid();
+            paintSticks();
         });
 
 
@@ -125,4 +119,33 @@ public class HelloController implements Initializable {
             }
         }
     }
+
+
+    private void paintSticks() {
+        gc.setFill(Color.BLACK);
+        double prob = 0.6;
+        Random rand = new Random();
+
+        gc.setLineWidth(7);
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                for (int dx = 0; dx <= 1; dx++) {
+                    for (int dy = 0; dy <= 1; dy++) {
+                        if ((dx == dy) || (row + dy >= rows) || (col + dx >= cols)) {
+                            continue;
+                        }
+                        if (rand.nextDouble() < prob) {
+                            int x1 = padX + col * cellWidth;
+                            int y1 = padY + row * cellHeight;
+                            int x2 = x1 + dx * cellWidth;
+                            int y2 = y1 + dy * cellHeight;
+                            gc.strokeLine(x1, y1, x2, y2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 }

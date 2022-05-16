@@ -15,23 +15,6 @@ public class Main {
         System.out.println(listaEvenimente);
         System.out.println(listaSali);
 
-       /*
-        public int compareTo() {
-            return this.getCapacity().compareTo(r.getCapacity());
-        }
 
-        public boolean compare(Object object1, Object object2) {
-        return object1.getStartDate().before(object2.getStartDate());
-    }
-        Comparator<Room> compareByCapacity = new Comparator<Room>() {
-            @Override
-            public int compare(Room o1, Room o2) {
-                return o1.getCapacity().compareTo(o2.getCapacity());
-            }
-        };
-
-        Collections.sort(listaSali, );
-
-        */
     }
 }

@@ -34,9 +34,6 @@ public class ViewCommand extends Command{
         }
     }
 
-    public void showCommand(){
-        System.out.println("Comanda de afiasare a catalogului");
-    }
 }
 
 

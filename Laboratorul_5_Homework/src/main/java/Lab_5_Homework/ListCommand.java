@@ -1,11 +1,16 @@
 package Lab_5_Homework;
 
 public class ListCommand extends  Command{
-
-    public void ListCom(Catalog c){
+private Catalog c;
+    public ListCommand(Catalog c){
+    }
+    /*public void ListCom(Catalog c){
         System.out.println(c);
     }
-    public void showCommand(){
-        System.out.println("Comanda de afiasare a catalogului");
+     */
+
+    @Override
+    public void execute() {
+        System.out.println(c);
     }
 }

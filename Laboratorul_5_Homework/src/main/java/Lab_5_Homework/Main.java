@@ -44,7 +44,11 @@ public class Main {
         ViewCommand v = new ViewCommand();
         v.ViewCom(c);
 
-        c.save("./catalog.json");
+        try {
+            c.save("./catalog.json");
+        } catch (FileInaccessibleException e) {
+            e.printStackTrace();
+        }
 
         LoadCommand lc = new LoadCommand();
         try {
@@ -54,6 +58,10 @@ public class Main {
         }
 
         ReportCommand rc = new ReportCommand();
-        rc.ReportCom(c);
+        try {
+            rc.ReportCom(c);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
