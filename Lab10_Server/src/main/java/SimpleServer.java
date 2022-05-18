@@ -7,11 +7,16 @@ public class SimpleServer {
     public static final int PORT = 8100;
     public SimpleServer() throws IOException {
         ServerSocket serverSocket = null ;
+
         try {
             serverSocket = new ServerSocket(PORT);
             while (true) {
                 System.out.println ("Waiting for a client ...");
                 Socket socket = serverSocket.accept();
+
+                //Implement a timeout for a connection
+                socket.setSoTimeout(60000);
+                
                 // Execute the client's request in a new thread
                 new ClientThread(socket).start();
             }
