@@ -1,9 +1,11 @@
 package com.example.demo;
 
+import java.util.List;
+
 public class User {
     int id;
     String name;
-    int friendsNo;
+    List<String> friendList;
 
     public User(int id, String name)
     {

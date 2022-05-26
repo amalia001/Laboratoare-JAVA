@@ -7,20 +7,25 @@ import org.springframework.http.ResponseEntity;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
     private final List<User> users = new ArrayList<>();
-    @Autowired
-    //private UserService us;
+   // private Map<Integer, List<String>> friendList = new HashMap<>();
+   private Map<String, List<String>> friendList = new HashMap<>();
 
     public UserController() {
         users.add(new User(1, "Amalia"));
         users.add(new User(2, "Laura"));
-        users.add(new User(1, "Ana"));
+        users.add(new User(3, "Ana"));
+        users.add(new User(4, "Alex"));
+        users.add(new User(5, "Corina"));
+        users.add(new User(6, "Ion"));
     }
 
     @GetMapping("/users")
@@ -47,6 +52,7 @@ public class UserController {
         return id;
     }
 
+
     @PostMapping(value = "/obj", consumes="application/json")
     public ResponseEntity<String>  createUser(@RequestBody User user)
     {
@@ -54,6 +60,7 @@ public class UserController {
         return new ResponseEntity<>(
                 "User created successfully", HttpStatus.CREATED);
     }
+
 
     public User findById(int id){
         for (User u: users)
@@ -70,10 +77,11 @@ public class UserController {
             return new ResponseEntity<>(
                     "User not found", HttpStatus.NOT_FOUND); //or GONE
         }
-        user.setName(name);
         return new ResponseEntity<>(
                 "User updated successsfully", HttpStatus.OK);
     }
+
+
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable int id) {
@@ -86,6 +94,15 @@ public class UserController {
         return new ResponseEntity<>("User removed", HttpStatus.OK);
     }
 
-
+    @PostMapping("{name}")
+    public Map<String, List<String>> addFriend(@PathVariable String name, @RequestParam String friendsName) {
+        List<String> friends=new ArrayList<>();
+        String[] arrayOfFriends  = friendsName.split(",");
+        List<String> fr = new ArrayList<>();
+        for(String friend:arrayOfFriends)
+            fr.add(friend);
+        friendList.put(name, fr);
+        return friendList;
+    }
 }
 
